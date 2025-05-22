@@ -27,6 +27,9 @@ jobs:
         java-version: '21'
         distribution: 'temurin'
         cache: maven
+    - name: Using nix
+      run: sh <(curl -L https://nixos.org/nix/install) --daemon
+
     - name: Build with Maven
       run: cd demo && mvn -B package --file pom.xml
 
